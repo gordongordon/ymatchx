@@ -11,10 +11,38 @@ export var toggleShowCompleted = () => {
   };
 };
 
-export var addTodo = (text) => {
+export var toggleShowBuy = () => {
+  return {
+    type: 'TOGGLE_SHOW_BUY'
+  };
+};
+
+export var toggleShowSale = () => {
+  return {
+    type: 'TOGGLE_SHOW_SALE'
+  };
+};
+
+export var toggleShowRent = () => {
+  return {
+    type: 'TOGGLE_SHOW_RENT'
+  };
+};
+
+export var toggleShowLease = () => {
+  return {
+    type: 'TOGGLE_SHOW_LEASE'
+  };
+};
+
+export var addTodo = (text, name, location, want, price) => {
   return {
     type: 'ADD_TODO',
-    text
+    text,
+    name,
+    location,
+    want,
+    price
   };
 };
 

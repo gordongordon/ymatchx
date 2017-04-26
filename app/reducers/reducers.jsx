@@ -19,6 +19,42 @@ export var showCompletedReducer = (state = false, action) => {
   }
 };
 
+export var showBuyReducer = (state = false, action) => {
+  switch (action.type) {
+    case 'TOGGLE_SHOW_BUY':
+      return !state;
+    default:
+      return state;
+  }
+};
+
+export var showSaleReducer = (state = false, action) => {
+  switch (action.type) {
+    case 'TOGGLE_SHOW_SALE':
+      return !state;
+    default:
+      return state;
+  }
+};
+
+export var showRentReducer = (state = false, action) => {
+  switch (action.type) {
+    case 'TOGGLE_SHOW_RENT':
+      return !state;
+    default:
+      return state;
+  }
+};
+
+export var showLeaseReducer = (state = false, action) => {
+  switch (action.type) {
+    case 'TOGGLE_SHOW_LEASE':
+      return !state;
+    default:
+      return state;
+  }
+};
+
 export var todosReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -29,7 +65,12 @@ export var todosReducer = (state = [], action) => {
           text: action.text,
           completed: false,
           createdAt: moment().unix(),
-          completedAt: undefined
+          completedAt: undefined,
+          name: action.name,
+          location: action.location,
+          want: action.want,
+          price: action.price,
+          isAgent: action.isAgent
         }
       ];
     case 'TOGGLE_TODO':

@@ -73,6 +73,8 @@ $global-text-direction: ltr;
 $global-flexbox: false;
 $print-transparent-backgrounds: true;
 
+$buttongroup-radius-on-each: true;
+
 @include add-foundation-colors;
 
 // 2. Breakpoints

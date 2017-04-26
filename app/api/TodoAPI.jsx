@@ -19,8 +19,14 @@ module.exports = {
 
     return $.isArray(todos) ? todos : [];
   },
-  filterTodos: function (todos, showCompleted, searchText) {
+  filterTodos: function (todos, showCompleted, searchText, showSale, showBuy, showRent, showLease) {
     var filteredTodos = todos;
+
+    // Filter by showCompleted
+    filteredTodos = filteredTodos.filter((todo) => {
+      return todo.want;
+    });
+
 
     // Filter by showCompleted
     filteredTodos = filteredTodos.filter((todo) => {
