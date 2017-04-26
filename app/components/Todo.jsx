@@ -77,26 +77,44 @@ export var Todo = React.createClass({
   //
    var renderLease = () =>{
     return (
-     <div className={todoClassName} onClick={() => {
-         dispatch(actions.toggleTodo(id));
-       }}>
-         <h3>To Lease </h3>
-       <div>
-         <input type="checkbox" checked={completed}/>
-       </div>
-       <div className="row">
-         <p>Lease : {text},{name},{location},{want},{price}</p>
-         <div className="secondary button-group">
+      <div>
+        <ul className="tabs" data-tabs id="example-tabs">
+          <li className="tabs-title is-active"><a href="#panel1" aria-selected="true">Lease Home</a></li>
+        </ul>
+        <div className="tabs-content" data-tabs-content="example-tabs">
+          <div className="tabs-panel is-active" id="panel1">
+            <table>
+              <thead>
+                <tr>
+                  <th width="100">User</th>
+                  <th width="100">Building</th>
+                  <th width="100">location</th>
+                  <th width="100">Want</th>
+                  <th width="100">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{text}</td>
+                  <td>{name}</td>
+                  <td>{location}</td>
+                  <td>{want}</td>
+                  <td>${price}</td>
+                </tr>
+              </tbody>
+            </table>
+
+           <div className="secondary button-group">
      <a className="button">Waiting</a>
      <a className="button">Reject</a>
      <a className="button">Chat</a>
      <a className="button">Call</a>
             </div>
-
-
-         <p className="todo__subtext">{renderDate()}</p>
-       </div>
+            <p className="todo__subtext">{renderDate()}</p>
+         </div>
+        </div>
      </div>
+
    )
  };
 
@@ -146,22 +164,44 @@ export var Todo = React.createClass({
 
    var renderBuy = () =>{
      return (
-     <div className={todoClassName} onClick={() => {
-         dispatch(actions.toggleTodo(id));
-       }}>
-         <h3 className="row">To Buy </h3>
-         <div className="small-2 large-2 columns"><input type="checkbox" checked={completed}/></div>
-         <div className="small-2 large-2 columns">Buy:</div>
-         <div className="small-2 large-2 columns">{text}</div>
-         <div className="small-2 large-2 columns">{name}</div>
-         <div className="small-2 large-2 columns">{location}</div>
-         <div className="small-2 large-2 columns">{want}</div>
-         <div className="small-2 large-2 columns">${price}</div>
        <div>
-         <p className="todo__subtext">{renderDate()}</p>
-         <p><button className="button">Reply</button></p>
-       </div>
-     </div>
+         <ul className="tabs" data-tabs id="example-tabs">
+           <li className="tabs-title is-active"><a href="#panel1" aria-selected="true">Buy Home</a></li>
+         </ul>
+         <div className="tabs-content" data-tabs-content="example-tabs">
+           <div className="tabs-panel is-active" id="panel1">
+             <table>
+               <thead>
+                 <tr>
+                   <th width="100">User</th>
+                   <th width="100">Building</th>
+                   <th width="100">location</th>
+                   <th width="100">Want</th>
+                   <th width="100">Price</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <td>{text}</td>
+                   <td>{name}</td>
+                   <td>{location}</td>
+                   <td>{want}</td>
+                   <td>${price}</td>
+                 </tr>
+               </tbody>
+             </table>
+
+            <div className="secondary button-group">
+      <a className="button">Waiting</a>
+      <a className="button">Reject</a>
+      <a className="button">Chat</a>
+      <a className="button">Call</a>
+             </div>
+             <p className="todo__subtext">{renderDate()}</p>
+          </div>
+         </div>
+      </div>
+
    )
  };
 

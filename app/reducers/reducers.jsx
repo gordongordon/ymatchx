@@ -70,7 +70,11 @@ export var todosReducer = (state = [], action) => {
           location: action.location,
           want: action.want,
           price: action.price,
-          isAgent: action.isAgent
+          isAgent: action.isAgent,
+          showSale : false,
+          showBuy : false,
+          showRent : false,
+          showLease : false
         }
       ];
     case 'TOGGLE_TODO':

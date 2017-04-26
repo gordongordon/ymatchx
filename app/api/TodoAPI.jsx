@@ -19,14 +19,13 @@ module.exports = {
 
     return $.isArray(todos) ? todos : [];
   },
-  filterTodos: function (todos, showCompleted, searchText, showSale, showBuy, showRent, showLease) {
+  filterTodos: function (todos, showCompleted, searchText, showSale, showBuy, showRent, showLease, want) {
     var filteredTodos = todos;
 
-    // Filter by showCompleted
+    // Filter by showSale
     filteredTodos = filteredTodos.filter((todo) => {
-      return todo.want;
+      return todo.want === want;
     });
-
 
     // Filter by showCompleted
     filteredTodos = filteredTodos.filter((todo) => {
@@ -38,6 +37,7 @@ module.exports = {
       var text = todo.text.toLowerCase();
       return searchText.length === 0 || text.indexOf(searchText) > -1;
     });
+
 
     // Sort todos with non-completed first
     filteredTodos.sort((a, b) => {
